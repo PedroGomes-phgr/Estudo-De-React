@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# 🚀 Mini Blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Uma aplicação web de blog desenvolvida com React e Firebase, permitindo autenticação de usuários, criação, edição e exclusão de posts, além de buscas por tags.
 
-## Available Scripts
+## ✨ Funcionalidades
 
-In the project directory, you can run:
+- Cadastro de usuários
+- Login e Logout
+- Autenticação com Firebase
+- Criação de posts
+- Edição de posts
+- Exclusão de posts
+- Dashboard para gerenciamento dos posts
+- Busca de posts por tags
+- Rotas protegidas
+- Interface responsiva
 
-### `npm start`
+## 🛠️ Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Front-end
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- React Router DOM
+- CSS Modules
 
-### `npm test`
+### Back-end
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Firebase Authentication
+- Firebase Firestore
 
-### `npm run build`
+### Ferramentas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Git
+- GitHub
+- Vercel
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📚 Conceitos Aplicados
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Componentização
+- Hooks do React
+  - useState
+  - useEffect
+  - useContext
+- Custom Hooks
+- Gerenciamento de Estado
+- Manipulação de Formulários
+- Rotas Protegidas
+- Integração com Firebase
+- Banco de Dados NoSQL
 
-### `npm run eject`
+## 📂 Estrutura do Projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+src/
+├── components/
+├── context/
+├── hooks/
+├── pages/
+├── firebase/
+├── App.js
+└── index.js
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Como Executar
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Clone o repositório
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/PedroGomes-phgr/Estudo-De-React.git
+```
 
-## Learn More
+### Acesse a pasta do projeto
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd 10_MINIBLOG/miniblogg
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Instale as dependências
 
-### Code Splitting
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Configure o Firebase
 
-### Analyzing the Bundle Size
+Crie um arquivo `.env` na raiz do projeto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```env
+REACT_APP_API_KEY=sua_api_key
+REACT_APP_AUTH_DOMAIN=seu_auth_domain
+REACT_APP_PROJECT_ID=seu_project_id
+REACT_APP_STORAGE_BUCKET=seu_storage_bucket
+REACT_APP_MESSAGING_SENDER_ID=seu_sender_id
+REACT_APP_APP_ID=seu_app_id
+```
 
-### Making a Progressive Web App
+### Execute o projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm start
+```
 
-### Advanced Configuration
+A aplicação ficará disponível em:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```txt
+http://localhost:3000
+```
 
-### Deployment
+## 🎯 Objetivo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+O projeto foi desenvolvido para praticar conceitos fundamentais e intermediários do React, além da integração com o Firebase para autenticação e armazenamento de dados.
 
-### `npm run build` fails to minify
+## 🚀 Melhorias Futuras
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Dark Mode
+- Sistema de comentários
+- Sistema de curtidas
+- Perfil de usuário
+- Upload de imagens com Firebase Storage
+- Paginação de posts
+- Filtros avançados
+
+## 👨‍💻 Autor
+
+**Pedro Henrique Gomes Rodrigues**
+
+- GitHub: https://github.com/PedroGomes-phgr
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins de estudo e portfólio.
