@@ -1,35 +1,84 @@
-import React, { use, useState } from "react";
-
-//components
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-//css
+import React, { useState } from "react";
 import styles from "./App.module.css";
+
+// components
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Modal from "./components/Modal";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 
-//inteface
+// interfaces
 import { ITask } from "./interfaces/Task";
 
 function App() {
-  const [taskList, setTasklist] = useState<ITask[]>([]);
+  const [taskList, setTaskList] = useState<ITask[]>([]);
+  const [taskToUpdate, setTaskToUpdate] = useState<ITask | null>(null);
+
+  const deleteTask = (title: string): void => {
+    setTaskList(
+      taskList.filter((task) => {
+        return task.title !== title;
+      })
+    );
+  };
+
+  const hideOrShowModal = (display: boolean) => {
+    const modal = document.getElementById("modal");
+    if (display) {
+      modal!.classList.remove("hide");
+    } else {
+      modal!.classList.add("hide");
+    }
+  };
+
+  const editTask = (task: ITask): void => {
+    hideOrShowModal(true);
+    setTaskToUpdate(task);
+  };
+
+  const updateTask = (id: number, title: string, difficulty: number) => {
+    const updatedTask: ITask = { id, title, difficulty };
+
+    const updatedItems = taskList.map((task) => {
+      return task.id === updatedTask.id ? updatedTask : task;
+    });
+
+    setTaskList(updatedItems);
+
+    hideOrShowModal(false);
+  };
 
   return (
     <div>
+      <Modal
+        title="Editar tarefa"
+        children={
+          <TaskForm
+            btnText="Editar"
+            taskList={taskList}
+            task={taskToUpdate}
+            handleUpdate={updateTask}
+          />
+        }
+      />
       <Header />
       <main className={styles.main}>
-        <div>
-          <h2>O que você vai fazer?</h2>
+        <div className={styles.todo_form}>
+          <h2>What you do?</h2>
           <TaskForm
-            btnText="Criar tarefa"
             taskList={taskList}
-            setTaskList={setTasklist}
+            setTaskList={setTaskList}
+            btnText="Cadastrar"
           />
         </div>
-        <div>
-          <h2>Suas tarfeas:</h2>
-          <TaskList />
+        <div className="todo-container">
+          <h2>Suas tarefas:</h2>
+          <TaskList
+            taskList={taskList}
+            handleDelete={deleteTask}
+            handleEdit={editTask}
+          />
         </div>
       </main>
       <Footer />
