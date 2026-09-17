@@ -1,6 +1,99 @@
 .header {
-  background-color: #282c34;
-  color: #61dafb;
-  text-align: center;
-  padding: 1em;
+  position: relative;
+  width: 100%;
+
+  background: rgba(15, 23, 42, 0.82);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+  padding: 1rem 2rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 0.8rem;
+}
+
+.logoIcon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #2563eb
+  );
+
+  color: white;
+
+  border-radius: 12px;
+
+  font-size: 1.6rem;
+
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.brand {
+  text-align: left;
+}
+
+.brand h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 1.45rem;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.brand p {
+  margin-top: 0.1rem;
+
+  color: #cbd5e1;
+
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0.9rem 1.2rem;
+  }
+
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+
+    font-size: 1.4rem;
+  }
+
+  .brand h1 {
+    font-size: 1.25rem;
+  }
+
+  .brand p {
+    font-size: 0.75rem;
+  }
 }

@@ -1,13 +1,15 @@
-import React from "react";
-
 import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <p>
-        <span>React + TS Todo</span> @2026
-      </p>
+      <div className={styles.container}>
+        <p>
+          <span>TaskFlow</span> © 2026
+        </p>
+
+        <p className={styles.tech}>Desenvolvido com React + TypeScript</p>
+      </div>
     </footer>
   );
 };

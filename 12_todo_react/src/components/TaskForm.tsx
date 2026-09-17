@@ -44,7 +44,12 @@ const TaskForm = ({
       } else {
         const id = Math.floor(Math.random() * 1000);
 
-        const newTask: ITask = { id, title, difficulty };
+        const newTask: ITask = {
+          id,
+          title,
+          difficulty,
+          completed: false,
+        };
 
         setTaskList!([...taskList, newTask]);
 
@@ -54,11 +59,13 @@ const TaskForm = ({
     }
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     if (e.target.name === "title") {
       setTitle(e.target.value);
     } else {
-      setDifficulty(parseInt(e.target.value));
+      setDifficulty(Number(e.target.value));
     }
   };
 
@@ -76,13 +83,11 @@ const TaskForm = ({
       </div>
       <div className={styles.input_container}>
         <label htmlFor="difficulty">Dificuldade:</label>
-        <input
-          type="number"
-          name="difficulty"
-          placeholder="Dificuldade da tarefa (1 a 5)"
-          value={difficulty}
-          onChange={handleChange}
-        />
+        <select name="difficulty" value={difficulty} onChange={handleChange}>
+          <option value={1}>Fácil</option>
+          <option value={3}>Média</option>
+          <option value={5}>Difícil</option>
+        </select>
       </div>
       <input type="submit" value={btnText} />
     </form>
